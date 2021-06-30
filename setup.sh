@@ -1,1 +1,1 @@
-cp ./vimrc.local /etc/vim
+sudo cp ./vimrc.local /etc/vim
