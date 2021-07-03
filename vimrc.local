@@ -4,6 +4,7 @@ set encoding=utf-8
 set showmatch
 
 syntax on
+filetype indent on
 
 set tabstop=4
 set expandtab
