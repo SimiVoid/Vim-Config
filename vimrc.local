@@ -10,3 +10,60 @@ set tabstop=4
 set expandtab
 set softtabstop=4
 set autoindent
+set smarttab
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'morhetz/gruvbox' " Gruvbox
+Plug 'preservim/nerdtree' " NerdTree
+Plug 'preservim/tagbar' " Tagbar for code navigation
+Plug 'vim-airline/vim-airline' " Status bar
+
+set encoding=UTF-8
+
+call plug#end()
+
+delc PlugUpgrade
+
+nmap <F8> :TagbarToggle<CR>
+
+" NERDTree config
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
+autocmd VimEnter * NERDTree | wincmd p
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Theme config
+
+set termguicolors
+set background=dark
+
+let g:gruvbox_italic=1
+
+colorscheme gruvbox
+
+" Status bar config
+
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
+inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
