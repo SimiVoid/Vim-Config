@@ -20,8 +20,6 @@ Plug 'preservim/tagbar' " Tagbar for code navigation
 Plug 'vim-airline/vim-airline' " Status bar
 Plug 'ryanoasis/vim-devicons' " Vim dev icons
 
-set encoding=UTF-8
-
 call plug#end()
 
 delc PlugUpgrade
