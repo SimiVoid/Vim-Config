@@ -2,5 +2,5 @@
 
 Insert in terminal:
 ```
-sudo ./setup.sh
+sudo ./init.sh
 ```
