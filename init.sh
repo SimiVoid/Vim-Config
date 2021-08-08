@@ -11,5 +11,5 @@ vim +'PlugInstall --sync' +qa
 
 SOURCE_TEXT='source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"'
 
-grep -qxF $SOURCE_TEXT ~/.bashrc || echo $SOURCE_TEXT >> ~/.bashrc
-grep -qxF $SOURCE_TEXT ~/.zshrc || echo $SOURCE_TEXT >> ~/.zshrc
+grep -qxF "$SOURCE_TEXT" ~/.bashrc || echo "$SOURCE_TEXT" >> ~/.bashrc
+grep -qxF "$SOURCE_TEXT" ~/.zshrc || echo "$SOURCE_TEXT" >> ~/.zshrc
